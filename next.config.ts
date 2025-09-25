@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
+const repoName = '/loomify-webapp';
+
 const nextConfig: NextConfig = {
-  // No external images needed - using local images only for faster loading
+  // Serve the site under the repo path so assets resolve on GitHub Pages
+  basePath: repoName,
+  assetPrefix: repoName,
+  trailingSlash: true,
 };
 
 export default nextConfig;
