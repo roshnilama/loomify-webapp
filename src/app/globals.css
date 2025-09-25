@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+  color-scheme: light;
+  /* Soft, elegant brand palette */
+  --brand: #9F7E69; /* warm taupe */
+  --brand-600: #846A57; /* deeper taupe */
+  --rose: #E8B4B8; /* soft rose */
+  --peach: #EAC4A3; /* soft peach */
+  --mint: #A8C7B5; /* sage green */
+  --sky: #B7C9E5; /* dusty blue */
+  --surface: #ffffff;
+  --surface-muted: #fafafa;
+  --border: rgba(0,0,0,.08);
+  --border-dark: rgba(255,255,255,.145);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Force light theme: ignore system dark preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+  --foreground: #333333;
+    --surface: #ffffff;
+    --surface-muted: #fafafa;
+    --border: rgba(0,0,0,.08);
+    --border-dark: rgba(0,0,0,.12);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Utilities */
+.card-surface {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.brand-gradient {
+  background:
+    radial-gradient(60rem 60rem at top right, color-mix(in srgb, var(--brand), transparent 85%), transparent),
+    radial-gradient(40rem 40rem at bottom left, color-mix(in srgb, var(--rose), transparent 90%), transparent),
+    radial-gradient(30rem 30rem at bottom right, color-mix(in srgb, var(--mint), transparent 92%), transparent);
+}
+
+.brand-ring:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand), transparent 50%);
+  outline-offset: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: .25rem .75rem;
+  border-radius: 9999px;
+  font-size: .75rem;
+}
