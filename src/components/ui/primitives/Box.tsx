@@ -1,6 +1,6 @@
 import React from "react";
 
-type BoxProps = React.HTMLAttributes<HTMLDivElement> & { as?: keyof JSX.IntrinsicElements };
+type BoxProps = React.HTMLAttributes<HTMLDivElement> & { as?: keyof React.JSX.IntrinsicElements };
 
 export function Box({ as: Tag = "div", className = "", ...props }: BoxProps) {
   // Use only one level primitive; consumers control classes and semantics

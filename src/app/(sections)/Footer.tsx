@@ -1,4 +1,3 @@
-
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -26,7 +25,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <h3 className="font-semibold text-[#846A57] mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-neutral-600 hover:text-[#9F7E69] transition">Beginner's Guide</a></li>
+              <li><a href="#" className="text-sm text-neutral-600 hover:text-[#9F7E69] transition">Beginner&apos;s Guide</a></li>
               <li><a href="#" className="text-sm text-neutral-600 hover:text-[#9F7E69] transition">Stitch Library</a></li>
               <li><a href="#" className="text-sm text-neutral-600 hover:text-[#9F7E69] transition">Pattern Tips</a></li>
             </ul>

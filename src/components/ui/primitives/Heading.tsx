@@ -5,7 +5,7 @@ type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & {
 };
 
 export function Heading({ level = 2, className = "", ...props }: HeadingProps) {
-  const Tag = (`h${level}` as unknown) as keyof JSX.IntrinsicElements;
+  const Tag = (`h${level}` as unknown) as keyof React.JSX.IntrinsicElements;
   const base = {
     1: "text-4xl sm:text-6xl font-bold tracking-tight",
     2: "text-2xl sm:text-3xl font-bold",

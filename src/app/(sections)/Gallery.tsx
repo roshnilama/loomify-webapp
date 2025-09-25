@@ -2,9 +2,10 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import imageManifest from '@/lib/image-manifest.json';
+import { ImageManifest } from '@/lib/types';
 
 export function Gallery() {
-  const images: { src: string; alt: string }[] = (imageManifest as any) || [];
+  const images: ImageManifest = imageManifest || [];
   return (
     <Section id="gallery">
       <Container>

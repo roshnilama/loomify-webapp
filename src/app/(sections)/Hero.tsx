@@ -8,9 +8,10 @@ import { Flex } from "@/components/ui/primitives/Flex";
 import { Heading } from "@/components/ui/primitives/Heading";
 import { Text } from "@/components/ui/primitives/Text";
 import imageManifest from '@/lib/image-manifest.json';
+import { ImageManifest } from '@/lib/types';
 
 export function Hero() {
-  const images: { src: string; alt: string }[] = (imageManifest as any) || [];
+  const images: ImageManifest = imageManifest || [];
     return (
       <Section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-[#B7C9E5]/20 via-[#EAC4A3]/10 to-white">
         <div aria-hidden className="absolute inset-0 -z-10">
