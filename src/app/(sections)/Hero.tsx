@@ -7,34 +7,10 @@ import { Stack } from "@/components/ui/primitives/Stack";
 import { Flex } from "@/components/ui/primitives/Flex";
 import { Heading } from "@/components/ui/primitives/Heading";
 import { Text } from "@/components/ui/primitives/Text";
-import path from "node:path";
-import fs from "node:fs/promises";
+import imageManifest from '@/lib/image-manifest.json';
 
-async function getPublicImages(): Promise<{ src: string; alt: string }[]> {
-  try {
-    const dirPath = path.join(process.cwd(), "public", "images");
-    const files = await fs.readdir(dirPath);
-    const exts = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
-    // Prioritize JPG files for better quality, then others
-    const sortedFiles = files
-      .filter((f) => exts.has(path.extname(f).toLowerCase()))
-      .sort((a, b) => {
-        if (a.endsWith('.jpg') && !b.endsWith('.jpg')) return -1;
-        if (!a.endsWith('.jpg') && b.endsWith('.jpg')) return 1;
-        return a.localeCompare(b);
-      })
-      .slice(0, 4);
-    return sortedFiles.map((f) => ({ 
-      src: `/images/${f}`, 
-      alt: f.replace(/[._-]+/g, " ").replace(/\.[^/.]+$/, "") 
-    }));
-  } catch {
-    return [];
-  }
-}
-
-export async function Hero() {
-  const images = await getPublicImages();
+export function Hero() {
+  const images: { src: string; alt: string }[] = (imageManifest as any) || [];
     return (
       <Section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-[#B7C9E5]/20 via-[#EAC4A3]/10 to-white">
         <div aria-hidden className="absolute inset-0 -z-10">

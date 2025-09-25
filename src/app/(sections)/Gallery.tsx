@@ -1,41 +1,10 @@
 import Image from "next/image";
-import path from "node:path";
-import fs from "node:fs/promises";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import imageManifest from '@/lib/image-manifest.json';
 
-async function getPublicImages(): Promise<{ src: string; alt: string }[]> {
-  try {
-    const dirPath = path.join(process.cwd(), "public", "images");
-    const files = await fs.readdir(dirPath);
-    const exts = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
-    // Sort by file type priority: JPG > PNG > WebP > others
-    const sortedFiles = files
-      .filter((f) => exts.has(path.extname(f).toLowerCase()))
-      .sort((a, b) => {
-        const extA = path.extname(a).toLowerCase();
-        const extB = path.extname(b).toLowerCase();
-        const priority = { '.jpg': 0, '.jpeg': 0, '.png': 1, '.webp': 2, '.gif': 3 };
-        const priorityA = priority[extA as keyof typeof priority] ?? 4;
-        const priorityB = priority[extB as keyof typeof priority] ?? 4;
-        if (priorityA !== priorityB) return priorityA - priorityB;
-        return a.localeCompare(b);
-      });
-    return sortedFiles.map((f) => ({ 
-      src: `/images/${f}`, 
-      alt: f.replace(/[._-]+/g, " ").replace(/\.[^/.]+$/, "") 
-    }));
-  } catch {
-    return [];
-  }
-}
-
-async function getImages(): Promise<{ src: string; alt: string }[]> {
-  return await getPublicImages();
-}
-
-export async function Gallery() {
-  const images = await getImages();
+export function Gallery() {
+  const images: { src: string; alt: string }[] = (imageManifest as any) || [];
   return (
     <Section id="gallery">
       <Container>
