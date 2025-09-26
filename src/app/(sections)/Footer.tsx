@@ -14,6 +14,7 @@ export function Footer() {
             </p>
             <div className="text-gray-400 text-sm">
               Created by <span className="text-white font-medium">Roshni Lama</span>
+              <span className="text-gray-500 text-xs ml-2">• Creator & Founder</span>
             </div>
             <div className="flex gap-4">
               <a 

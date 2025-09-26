@@ -90,6 +90,7 @@ export function Hero() {
                     <div className="text-left">
                       <div className="text-lg font-bold text-gray-800">Follow Our Journey</div>
                       <div className="text-sm text-gray-600">See our latest creations</div>
+                      <div className="text-xs text-gray-500 mt-1">by Roshni Lama • Creator & Founder</div>
                     </div>
                   </div>
                   
