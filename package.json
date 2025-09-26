@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "generate-manifest": "node scripts/generate-image-manifest.js",
-    "export": "npm run generate-manifest && next build --turbo && next export",
+    "export": "npm run generate-manifest && next build && next export",
     "deploy:gh": "npm run export && npx gh-pages -d out -b gh-pages"
   },
   "dependencies": {
