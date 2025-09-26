@@ -25,16 +25,16 @@ export const FEATURES = [
 export const TESTIMONIALS = [
   {
     quote:
-      "The clearest instructions I’ve used. My crochet roses finally look perfect!",
-    name: "Amara S.",
+      "The clearest instructions I've used. My crochet roses finally look perfect!",
+    name: "Chim",
   },
   {
     quote: "I love tracking yarn and hooks per project. It keeps my WIPs organized.",
-    name: "Priya K.",
+    name: "Neera",
   },
   {
     quote: "A welcoming community that motivates me to finish more projects.",
-    name: "Zoe M.",
+    name: "Sheetal",
   },
 ];
 

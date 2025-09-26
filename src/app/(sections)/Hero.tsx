@@ -13,48 +13,70 @@ import { ImageManifest } from '@/lib/types';
 export function Hero() {
   const images: ImageManifest = imageManifest || [];
     return (
-      <Section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-[#B7C9E5]/20 via-[#EAC4A3]/10 to-white">
-        <div aria-hidden className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#B7C9E5]/30 via-[#EAC4A3]/10 to-white" />
-        </div>
-      <Container className="relative grid gap-10 items-center text-center">
-        <Stack gap="6" className="items-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 text-[#846A57] backdrop-blur-sm text-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#846A57]/80" />
-              Introducing {SITE.name}
+      <Section className="relative pt-40 pb-32 overflow-hidden bg-white">
+        <Container className="relative">
+          <div className="max-w-5xl mx-auto text-center">
+            <Stack gap="10" className="items-center">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 text-sm font-medium border border-blue-200/50 shadow-sm">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                Welcome to {SITE.name}
+              </div>
+              
+              {/* Main headline */}
+              <div className="space-y-4">
+                <Heading level={1} className="text-7xl md:text-8xl font-black text-gray-900 tracking-tight leading-none">
+                  PROFESSIONAL
+                </Heading>
+                <Heading level={1} className="text-7xl md:text-8xl font-black text-gray-900 tracking-tight leading-none">
+                  CROCHET STUDIO
+                </Heading>
+              </div>
+              
+              {/* Subtitle */}
+              <Text className="text-2xl text-gray-600 max-w-3xl leading-relaxed font-medium">
+                The ultimate toolkit for serious makers. Premium patterns, intelligent tracking, 
+                and professional-grade project management.
+              </Text>
+              
+              {/* CTA Buttons */}
+              <Flex className="mt-12 gap-6" justify="center" direction="row">
+                <Button 
+                  variant="brand" 
+                  href="#gallery"
+                  className="px-12 py-5 text-white bg-gray-900 hover:bg-gray-800 rounded-2xl transition-all duration-200 shadow-2xl shadow-gray-900/30 hover:shadow-3xl hover:shadow-gray-900/40 font-bold text-lg hover:scale-105"
+                >
+                  START CREATING
+                </Button>
+                <Button 
+                  variant="outline" 
+                  href="#features"
+                  className="px-12 py-5 text-gray-900 bg-white hover:bg-gray-900 hover:text-white border-3 border-gray-900 rounded-2xl transition-all duration-200 font-bold text-lg hover:scale-105 shadow-xl"
+                >
+                  EXPLORE FEATURES
+                </Button>
+              </Flex>
+            </Stack>
+            
+            {/* Image grid */}
+            <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
+              {images.map((img, idx) => (
+                <div key={img.src} className="relative overflow-hidden rounded-3xl aspect-[4/3] border-2 border-gray-900/10 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:scale-105">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 25vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    priority={idx === 0}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
             </div>
-            <Heading level={1} className="text-5xl font-medium text-[#846A57] tracking-tight max-w-4xl">
-              Beautiful crochet patterns and project tracking
-            </Heading>
-            <Text className="text-lg text-neutral-700 max-w-2xl">
-              Explore curated designs, manage your works-in-progress, and get inspired by a warm community of makers.
-            </Text>
-          <Flex className="mt-4 gap-4" justify="center" direction="row">
-            <Button 
-              variant="brand" 
-              href="#gallery"
-              className="px-6 py-2.5 text-white bg-[#9F7E69] hover:bg-[#846A57] rounded-full transition-colors"
-            >
-              Browse patterns
-            </Button>
-          </Flex>
-        </Stack>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          {images.map((img, idx) => (
-            <div key={img.src} className="relative overflow-hidden rounded-xl aspect-[4/3] border">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 25vw"
-                className="object-cover"
-                priority={idx === 0}
-              />
-            </div>
-          ))}
-        </div>
-      </Container>
-    </Section>
-  );
+          </div>
+        </Container>
+      </Section>
+    );
 }
 
