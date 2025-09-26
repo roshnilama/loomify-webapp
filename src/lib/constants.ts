@@ -1,23 +1,23 @@
 export const SITE = {
   name: "Loomify",
-  description: "Beautiful crochet patterns and project tracking.",
+  description: "Handmade crochet flowers and beautiful handcrafted items.",
   url: "https://example.com",
 };
 
 export const FEATURES = [
   {
-    title: "Curated patterns",
-    desc: "Premium crochet florals with clear stitch charts and step‑by‑step images.",
+    title: "Handmade flowers",
+    desc: "Beautiful crochet roses, tulips, and floral arrangements made with love and care.",
     icon: "/file.svg",
   },
   {
-    title: "Project tracker",
-    desc: "Track yarn, hooks, time, and notes across your works‑in‑progress.",
+    title: "Custom orders",
+    desc: "Personalized crochet items tailored to your specific needs and preferences.",
     icon: "/window.svg",
   },
   {
-    title: "Maker community",
-    desc: "Share finished objects, swap tips, and get feedback from fellow makers.",
+    title: "Quality guarantee",
+    desc: "Each item is carefully crafted with premium materials and attention to detail.",
     icon: "/globe.svg",
   },
 ];
@@ -25,16 +25,16 @@ export const FEATURES = [
 export const TESTIMONIALS = [
   {
     quote:
-      "The clearest instructions I've used. My crochet roses finally look perfect!",
-    name: "Chim",
+      "I ordered a bouquet of crochet roses and they arrived beautifully packaged. The quality is amazing!",
+    name: "Chim Lama",
   },
   {
-    quote: "I love tracking yarn and hooks per project. It keeps my WIPs organized.",
-    name: "Neera",
+    quote: "The custom crochet flowers I ordered were exactly what I wanted. Perfect for my wedding centerpiece!",
+    name: "Neera Pradhan",
   },
   {
-    quote: "A welcoming community that motivates me to finish more projects.",
-    name: "Sheetal",
+    quote: "I've bought several items from Loomify and each one is more beautiful than the last. Highly recommended!",
+    name: "Sheetal Lama",
   },
 ];
 

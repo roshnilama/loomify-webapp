@@ -18,25 +18,24 @@ export function Hero() {
           <div className="max-w-5xl mx-auto text-center">
             <Stack gap="10" className="items-center">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 text-sm font-medium border border-blue-200/50 shadow-sm">
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-                Welcome to {SITE.name}
+              <div className="text-gray-500 text-sm font-medium tracking-wider uppercase">
+                {SITE.name} • Handmade Crochet Flowers
               </div>
               
               {/* Main headline */}
               <div className="space-y-4">
                 <Heading level={1} className="text-7xl md:text-8xl font-black text-gray-900 tracking-tight leading-none">
-                  PROFESSIONAL
+                  HANDMADE
                 </Heading>
                 <Heading level={1} className="text-7xl md:text-8xl font-black text-gray-900 tracking-tight leading-none">
-                  CROCHET STUDIO
+                  CROCHET FLOWERS
                 </Heading>
               </div>
               
               {/* Subtitle */}
               <Text className="text-2xl text-gray-600 max-w-3xl leading-relaxed font-medium">
-                The ultimate toolkit for serious makers. Premium patterns, intelligent tracking, 
-                and professional-grade project management.
+                Beautiful handcrafted crochet flowers, bouquets, and arrangements. 
+                Made with love and delivered with care to brighten your space.
               </Text>
               
               {/* CTA Buttons */}
@@ -46,14 +45,14 @@ export function Hero() {
                   href="#gallery"
                   className="px-12 py-5 text-white bg-gray-900 hover:bg-gray-800 rounded-2xl transition-all duration-200 shadow-2xl shadow-gray-900/30 hover:shadow-3xl hover:shadow-gray-900/40 font-bold text-lg hover:scale-105"
                 >
-                  START CREATING
+                  SHOP NOW
                 </Button>
                 <Button 
                   variant="outline" 
                   href="#features"
                   className="px-12 py-5 text-gray-900 bg-white hover:bg-gray-900 hover:text-white border-3 border-gray-900 rounded-2xl transition-all duration-200 font-bold text-lg hover:scale-105 shadow-xl"
                 >
-                  EXPLORE FEATURES
+                  CUSTOM ORDERS
                 </Button>
               </Flex>
             </Stack>
