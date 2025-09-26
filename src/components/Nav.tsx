@@ -5,6 +5,7 @@ import { Logo } from "@/components/Logo";
 const SECTIONS = [
   { id: "features", label: "Features" },
   { id: "gallery", label: "Gallery" },
+  { id: "contact", label: "Contact" },
 ];
 
 export function Nav() {

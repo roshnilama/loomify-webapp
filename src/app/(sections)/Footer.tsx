@@ -3,7 +3,7 @@ import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer id="contact" className="bg-gray-900 text-white">
       <Container className="py-16">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Brand Section */}
